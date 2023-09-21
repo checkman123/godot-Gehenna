@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://cctcfip7ngsde"]
+[gd_scene load_steps=19 format=3 uid="uid://cctcfip7ngsde"]
 
 [ext_resource type="Script" path="res://Characters/Player/Player.gd" id="1_ghlnc"]
 [ext_resource type="Texture2D" uid="uid://ygietd64ey0v" path="res://Assets/Sprites/Characters/Player/Kino_Walk.png" id="2_rkbsj"]
@@ -7,11 +7,10 @@
 [ext_resource type="Script" path="res://Characters/Player/GroundState.gd" id="5_mdf0b"]
 [ext_resource type="Script" path="res://Characters/Player/AirState.gd" id="6_3g52j"]
 [ext_resource type="Script" path="res://Characters/Player/LandingState.gd" id="7_ajqmw"]
-[ext_resource type="Script" path="res://Characters/Player/StateDebugLabel.gd" id="8_4rdag"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_akwdn"]
 radius = 17.0
-height = 38.0
+height = 36.0
 
 [sub_resource type="Animation" id="Animation_p8hpl"]
 resource_name = "Idle"
@@ -177,20 +176,9 @@ character = NodePath("..")
 script = ExtResource("5_mdf0b")
 air_state = NodePath("../Air")
 
-[node name="Air" type="Node" parent="CharacterStateMachine" node_paths=PackedStringArray("ground_state")]
+[node name="Air" type="Node" parent="CharacterStateMachine"]
 script = ExtResource("6_3g52j")
-ground_state = NodePath("../Ground")
 
 [node name="Landing" type="Node" parent="CharacterStateMachine"]
 script = ExtResource("7_ajqmw")
 can_move = false
-
-[node name="StateDebugLabel" type="Label" parent="." node_paths=PackedStringArray("state_machine")]
-offset_left = -22.0
-offset_top = -47.0
-offset_right = 23.0
-offset_bottom = -21.0
-text = "State:
-"
-script = ExtResource("8_4rdag")
-state_machine = NodePath("../CharacterStateMachine")
