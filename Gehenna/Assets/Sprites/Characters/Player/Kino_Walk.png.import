@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b20ole2wxd5q4"
-path="res://.godot/imported/commando_spritesheet.png-6be0ee1adf5387672fd9bf3fa2333b7e.ctex"
+uid="uid://ygietd64ey0v"
+path="res://.godot/imported/Kino_Walk.png-853881c7411276f054d7ba2abc55c42f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Characters/Player/commando_spritesheet.png"
-dest_files=["res://.godot/imported/commando_spritesheet.png-6be0ee1adf5387672fd9bf3fa2333b7e.ctex"]
+source_file="res://Assets/Sprites/Characters/Player/Kino_Walk.png"
+dest_files=["res://.godot/imported/Kino_Walk.png-853881c7411276f054d7ba2abc55c42f.ctex"]
 
 [params]
 
