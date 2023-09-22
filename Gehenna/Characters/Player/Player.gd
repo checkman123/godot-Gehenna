@@ -6,6 +6,7 @@ extends CharacterBody2D
 @onready var animation_tree : AnimationTree = $AnimationTree
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var state_machine : CharacterStateMachine = $CharacterStateMachine
+@onready var hurt_box : Area2D = $HurtBox
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -33,7 +34,8 @@ func _physics_process(delta):
 	move_and_slide()
 	update_animation_parameters()
 	update_facing_direction()
-	
+
+#---Handles Movement---
 func update_animation_parameters():
 	animation_tree.set("parameters/Move/blend_position", direction.x)
 	
@@ -42,11 +44,24 @@ func update_facing_direction():
 		sprite.flip_h = true
 	elif direction.x < 0:
 		sprite.flip_h = false
+#-----------------------
+#---Handles HurtBox---
+func _on_hurt_box_area_entered(area : Area2D):
+	if area.has_method("collect"):
+		area.collect()
+#-----------------------
 
 
+
+
+#---Handles inventory---
 func _on_inventory_gui_closed():
 	get_tree().paused = false
 
 
 func _on_inventory_gui_opened():
 	get_tree().paused = true
+#-----------------------
+
+
+
