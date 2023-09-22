@@ -11,6 +11,7 @@ extends CharacterBody2D
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var direction : Vector2 = Vector2.ZERO
 var animation_locked : bool = false
+var current_jump_amount : int = 0
 
 func _ready():
 	animation_tree.active = true
@@ -30,10 +31,10 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, speed)
 
 	move_and_slide()
-	update_animation()
+	update_animation_parameters()
 	update_facing_direction()
 	
-func update_animation():
+func update_animation_parameters():
 	animation_tree.set("parameters/Move/blend_position", direction.x)
 	
 func update_facing_direction():
