@@ -42,3 +42,11 @@ func update_facing_direction():
 		sprite.flip_h = true
 	elif direction.x < 0:
 		sprite.flip_h = false
+
+
+func _on_inventory_gui_closed():
+	get_tree().paused = false
+
+
+func _on_inventory_gui_opened():
+	get_tree().paused = true

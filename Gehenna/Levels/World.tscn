@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://c656uf1jc5q3u"]
+[gd_scene load_steps=7 format=3 uid="uid://c656uf1jc5q3u"]
 
 [ext_resource type="Texture2D" uid="uid://b2qwm8ct0ffb6" path="res://Assets/TileSets/tileset.png" id="1_rrhjk"]
 [ext_resource type="PackedScene" uid="uid://cctcfip7ngsde" path="res://Characters/Player/Player.tscn" id="2_ytd6m"]
+[ext_resource type="PackedScene" uid="uid://cw22sflsbf00j" path="res://GUI/InventoryGUI.tscn" id="3_6rhp5"]
+[ext_resource type="Script" path="res://Levels/CanvasLayer.gd" id="3_55fm2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t31iv"]
 texture = ExtResource("1_rrhjk")
@@ -412,3 +414,12 @@ layer_0/tile_data = PackedInt32Array(2293760, 196608, 1, 2293761, 196608, 1, 229
 
 [node name="Player" parent="." instance=ExtResource("2_ytd6m")]
 position = Vector2(552, 196)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+process_mode = 3
+script = ExtResource("3_55fm2")
+
+[node name="InventoryGUI" parent="CanvasLayer" instance=ExtResource("3_6rhp5")]
+
+[connection signal="closed" from="CanvasLayer/InventoryGUI" to="Player" method="_on_inventory_gui_closed"]
+[connection signal="opened" from="CanvasLayer/InventoryGUI" to="Player" method="_on_inventory_gui_opened"]
