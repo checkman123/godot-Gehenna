@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://k5syanjad1vg"
-path="res://.godot/imported/Kino_Jump.png-c1aa9269dc1f17678eea858d640ea4ed.ctex"
+uid="uid://bste5pmy5qsdd"
+path="res://.godot/imported/DinoSprites - vita.png-81176c29001b991fa17ef6863804b6f1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Characters/Player/Kino_Jump.png"
-dest_files=["res://.godot/imported/Kino_Jump.png-c1aa9269dc1f17678eea858d640ea4ed.ctex"]
+source_file="res://Assets/Sprites/Characters/Player/Dino/DinoSprites - vita.png"
+dest_files=["res://.godot/imported/DinoSprites - vita.png-81176c29001b991fa17ef6863804b6f1.ctex"]
 
 [params]
 

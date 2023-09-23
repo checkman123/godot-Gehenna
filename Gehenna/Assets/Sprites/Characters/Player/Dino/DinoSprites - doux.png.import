@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bey5mn2q7erks"
-path="res://.godot/imported/Kino_Idle.png-227bf2931d1bf19f261dbf25761e701d.ctex"
+uid="uid://c01qgjhd8dsh2"
+path="res://.godot/imported/DinoSprites - doux.png-3b3af21e49d13456076aef66d932ab2c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Characters/Player/Kino_Idle.png"
-dest_files=["res://.godot/imported/Kino_Idle.png-227bf2931d1bf19f261dbf25761e701d.ctex"]
+source_file="res://Assets/Sprites/Characters/Player/Dino/DinoSprites - doux.png"
+dest_files=["res://.godot/imported/DinoSprites - doux.png-3b3af21e49d13456076aef66d932ab2c.ctex"]
 
 [params]
 

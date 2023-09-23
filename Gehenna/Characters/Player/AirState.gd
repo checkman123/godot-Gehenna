@@ -1,11 +1,11 @@
 extends State
 
-@export var ground_state:State
+@export var ground_state : State
 @export var double_jump_velocity : float = -300
 @export var extra_jump_amount : int = 2
 @export var jump_animation : String = "Jump"
 @export var fall_animation : String = "Fall"
-@export var idle_animation : String = "Move"
+@export var idle_animation : String = "Move" #Name from Animation Tree
 
 var has_extra_jump : bool = true
 

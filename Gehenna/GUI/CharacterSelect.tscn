@@ -1,0 +1,157 @@
+[gd_scene load_steps=20 format=3 uid="uid://cx2ch5qy8r8wa"]
+
+[ext_resource type="Texture2D" uid="uid://c01qgjhd8dsh2" path="res://Assets/Sprites/Characters/Player/Dino/DinoSprites - doux.png" id="1_jn061"]
+[ext_resource type="Script" path="res://GUI/CharacterSelect.gd" id="1_oji77"]
+[ext_resource type="Texture2D" uid="uid://fu2w7bc0apnk" path="res://Assets/Sprites/Characters/Player/Dino/DinoSprites - mort.png" id="2_0w6hl"]
+[ext_resource type="Texture2D" uid="uid://bkjrexqfcn4bn" path="res://Assets/Sprites/Characters/Player/Dino/DinoSprites - tard.png" id="3_dl5lt"]
+[ext_resource type="Texture2D" uid="uid://bste5pmy5qsdd" path="res://Assets/Sprites/Characters/Player/Dino/DinoSprites - vita.png" id="4_fw5pn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_77i2m"]
+bg_color = Color(0.0588235, 0.109804, 0.368627, 0.207843)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ulllj"]
+atlas = ExtResource("1_jn061")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ay68s"]
+atlas = ExtResource("1_jn061")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8tw8e"]
+atlas = ExtResource("1_jn061")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6qy1q"]
+atlas = ExtResource("2_0w6hl")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ys2xd"]
+atlas = ExtResource("2_0w6hl")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_doo15"]
+atlas = ExtResource("2_0w6hl")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xalve"]
+atlas = ExtResource("3_dl5lt")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3mjtg"]
+atlas = ExtResource("3_dl5lt")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2xqvq"]
+atlas = ExtResource("3_dl5lt")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sumiy"]
+atlas = ExtResource("4_fw5pn")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rhve6"]
+atlas = ExtResource("4_fw5pn")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2bcg3"]
+atlas = ExtResource("4_fw5pn")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dmpe6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ulllj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ay68s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8tw8e")
+}],
+"loop": true,
+"name": &"Player0",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6qy1q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ys2xd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_doo15")
+}],
+"loop": true,
+"name": &"Player1",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xalve")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3mjtg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2xqvq")
+}],
+"loop": true,
+"name": &"Player2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sumiy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rhve6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2bcg3")
+}],
+"loop": true,
+"name": &"Player3",
+"speed": 5.0
+}]
+
+[node name="CharacterSelect" type="Node2D"]
+script = ExtResource("1_oji77")
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_77i2m")
+
+[node name="PlayerSelect" type="AnimatedSprite2D" parent="."]
+position = Vector2(569, 359)
+scale = Vector2(10.2917, 10.2917)
+sprite_frames = SubResource("SpriteFrames_dmpe6")
+animation = &"Player0"
+frame_progress = 0.848329
+
+[node name="Left" type="Button" parent="."]
+offset_left = 171.0
+offset_top = 329.0
+offset_right = 307.0
+offset_bottom = 396.0
+text = "Left"
+
+[node name="Right" type="Button" parent="."]
+offset_left = 810.0
+offset_top = 329.0
+offset_right = 946.0
+offset_bottom = 396.0
+text = "Right"
+
+[node name="Select" type="Button" parent="."]
+offset_left = 509.0
+offset_top = 514.0
+offset_right = 645.0
+offset_bottom = 581.0
+text = "Select"
+
+[connection signal="pressed" from="Left" to="." method="_on_left_pressed"]
+[connection signal="pressed" from="Right" to="." method="_on_right_pressed"]
+[connection signal="pressed" from="Select" to="." method="_on_select_pressed"]

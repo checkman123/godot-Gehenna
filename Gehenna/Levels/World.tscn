@@ -4,11 +4,11 @@
 [ext_resource type="Texture2D" uid="uid://b2qwm8ct0ffb6" path="res://Assets/TileSets/tileset.png" id="1_rrhjk"]
 [ext_resource type="PackedScene" uid="uid://dmihrvdd8lp1q" path="res://Item/Fish.tscn" id="2_a41xt"]
 [ext_resource type="PackedScene" uid="uid://756es7d2ucqg" path="res://Item/Octopus.tscn" id="2_bnhlm"]
-[ext_resource type="PackedScene" uid="uid://cctcfip7ngsde" path="res://Characters/Player/Player.tscn" id="2_ytd6m"]
 [ext_resource type="PackedScene" uid="uid://cw22sflsbf00j" path="res://GUI/InventoryGUI.tscn" id="3_6rhp5"]
 [ext_resource type="Script" path="res://Levels/CanvasLayer.gd" id="3_55fm2"]
 [ext_resource type="PackedScene" uid="uid://d0pir15ojf6os" path="res://Item/Katana.tscn" id="3_wf1t7"]
 [ext_resource type="PackedScene" uid="uid://ureputo6uqts" path="res://Item/LifePot.tscn" id="4_q72ao"]
+[ext_resource type="PackedScene" uid="uid://cctcfip7ngsde" path="res://Characters/Player/Characters/Player0.tscn" id="9_3yo13"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t31iv"]
 texture = ExtResource("1_rrhjk")
@@ -421,9 +421,6 @@ sources/2 = SubResource("TileSetScenesCollectionSource_u0hys")
 [node name="World" type="Node2D"]
 script = ExtResource("1_fofwv")
 
-[node name="Player" parent="." instance=ExtResource("2_ytd6m")]
-position = Vector2(539, 487)
-
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_ojfhv")
 format = 2
@@ -442,6 +439,9 @@ script = ExtResource("3_55fm2")
 
 [node name="InventoryGUI" parent="CanvasLayer" instance=ExtResource("3_6rhp5")]
 visible = false
+
+[node name="Player" parent="." instance=ExtResource("9_3yo13")]
+position = Vector2(494, 521)
 
 [connection signal="closed" from="CanvasLayer/InventoryGUI" to="." method="_on_inventory_gui_closed"]
 [connection signal="opened" from="CanvasLayer/InventoryGUI" to="." method="_on_inventory_gui_opened"]
