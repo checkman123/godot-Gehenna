@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://dsem3hmtfmbfc"]
+
+[ext_resource type="Script" path="res://Inventory/InventoryItem.gd" id="1_ghoim"]
+[ext_resource type="Texture2D" uid="uid://co0oqc4e4i6ga" path="res://Assets/Sprites/Items/Food/Fish.png" id="2_x3iu1"]
+
+[resource]
+script = ExtResource("1_ghoim")
+name = "Fish"
+texture = ExtResource("2_x3iu1")
+item_info = "-1 HP"

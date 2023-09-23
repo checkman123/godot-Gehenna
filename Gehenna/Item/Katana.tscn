@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://d0pir15ojf6os"]
+
+[ext_resource type="PackedScene" uid="uid://clyfavgiaatag" path="res://Item/Collectable.tscn" id="1_ytm5i"]
+[ext_resource type="Texture2D" uid="uid://888bkswrph7e" path="res://Assets/Sprites/Items/Weapons/Katana/Sprite.png" id="2_fm168"]
+[ext_resource type="Resource" uid="uid://3rvs2tkipit7" path="res://Inventory/Items/Katana.tres" id="2_hugb6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v2pcs"]
+resource_local_to_scene = true
+size = Vector2(6, 14)
+
+[node name="Collectable" instance=ExtResource("1_ytm5i")]
+itemRes = ExtResource("2_hugb6")
+
+[node name="CollisionShape2D" parent="." index="0"]
+shape = SubResource("RectangleShape2D_v2pcs")
+
+[node name="Sprite2D" parent="." index="2"]
+texture = ExtResource("2_fm168")

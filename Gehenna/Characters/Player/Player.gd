@@ -2,11 +2,13 @@ extends CharacterBody2D
 
 
 @export var speed : float = 200.0
+@export var inventory: Inventory
 
 @onready var animation_tree : AnimationTree = $AnimationTree
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var state_machine : CharacterStateMachine = $CharacterStateMachine
 @onready var hurt_box : Area2D = $HurtBox
+
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -48,11 +50,8 @@ func update_facing_direction():
 #---Handles HurtBox---
 func _on_hurt_box_area_entered(area : Area2D):
 	if area.has_method("collect"):
-		area.collect()
+		area.collect(inventory)
 #-----------------------
-
-
-
 
 #---Handles inventory---
 func _on_inventory_gui_closed():

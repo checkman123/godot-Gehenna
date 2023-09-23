@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://clyfavgiaatag"]
 
-[ext_resource type="Script" path="res://Items/Collectable.gd" id="1_scmpr"]
+[ext_resource type="Script" path="res://Item/Collectable.gd" id="1_efyge"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_twr77"]
 resource_local_to_scene = true
@@ -9,18 +9,6 @@ resource_local_to_scene = true
 resource_name = "Idle"
 length = 0.4
 loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(0, 2), Vector2(0, 0), Vector2(0, -2), Vector2(0, 0)]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6t73a"]
 _data = {
@@ -28,16 +16,15 @@ _data = {
 }
 
 [node name="Collectable" type="Area2D"]
-script = ExtResource("1_scmpr")
+script = ExtResource("1_efyge")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_twr77")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, 2)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Idle"
 libraries = {
 "": SubResource("AnimationLibrary_6t73a")
 }
+
+[node name="Sprite2D" type="Sprite2D" parent="."]

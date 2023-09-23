@@ -1,11 +1,14 @@
-[gd_scene load_steps=10 format=3 uid="uid://c656uf1jc5q3u"]
+[gd_scene load_steps=13 format=3 uid="uid://c656uf1jc5q3u"]
 
+[ext_resource type="Script" path="res://Levels/World.gd" id="1_fofwv"]
 [ext_resource type="Texture2D" uid="uid://b2qwm8ct0ffb6" path="res://Assets/TileSets/tileset.png" id="1_rrhjk"]
-[ext_resource type="PackedScene" uid="uid://bs5kugaqso7w6" path="res://Items/Octopus.tscn" id="2_eto5o"]
+[ext_resource type="PackedScene" uid="uid://dmihrvdd8lp1q" path="res://Item/Fish.tscn" id="2_a41xt"]
+[ext_resource type="PackedScene" uid="uid://756es7d2ucqg" path="res://Item/Octopus.tscn" id="2_bnhlm"]
 [ext_resource type="PackedScene" uid="uid://cctcfip7ngsde" path="res://Characters/Player/Player.tscn" id="2_ytd6m"]
 [ext_resource type="PackedScene" uid="uid://cw22sflsbf00j" path="res://GUI/InventoryGUI.tscn" id="3_6rhp5"]
 [ext_resource type="Script" path="res://Levels/CanvasLayer.gd" id="3_55fm2"]
-[ext_resource type="PackedScene" uid="uid://cit51o5t0grk3" path="res://Items/Katana.tscn" id="3_w4h8e"]
+[ext_resource type="PackedScene" uid="uid://d0pir15ojf6os" path="res://Item/Katana.tscn" id="3_wf1t7"]
+[ext_resource type="PackedScene" uid="uid://ureputo6uqts" path="res://Item/LifePot.tscn" id="4_q72ao"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t31iv"]
 texture = ExtResource("1_rrhjk")
@@ -403,32 +406,35 @@ texture = ExtResource("1_rrhjk")
 15:21/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 15:21/0/physics_layer_0/angular_velocity = 0.0
 
-[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_xcvjv"]
-resource_name = "Collectable"
-scenes/1/scene = ExtResource("2_eto5o")
-scenes/2/scene = ExtResource("3_w4h8e")
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_u0hys"]
+resource_name = "Collectables"
+scenes/1/scene = ExtResource("2_a41xt")
+scenes/2/scene = ExtResource("3_wf1t7")
+scenes/3/scene = ExtResource("4_q72ao")
+scenes/4/scene = ExtResource("2_bnhlm")
 
 [sub_resource type="TileSet" id="TileSet_ojfhv"]
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_t31iv")
-sources/1 = SubResource("TileSetScenesCollectionSource_xcvjv")
+sources/2 = SubResource("TileSetScenesCollectionSource_u0hys")
 
 [node name="World" type="Node2D"]
+script = ExtResource("1_fofwv")
+
+[node name="Player" parent="." instance=ExtResource("2_ytd6m")]
+position = Vector2(539, 487)
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_ojfhv")
 format = 2
-layer_0/tile_data = PackedInt32Array(2293760, 196608, 1, 2293761, 196608, 1, 2293762, 196608, 1, 2293763, 196608, 1, 2293764, 196608, 1, 2293765, 196608, 1, 2293766, 196608, 1, 2293767, 196608, 1, 2293768, 196608, 1, 2293769, 196608, 1, 2293770, 196608, 1, 2293771, 196608, 1, 2293772, 196608, 1, 2293773, 196608, 1, 2293774, 196608, 1, 2293775, 196608, 1, 2293776, 196608, 1, 2293777, 196608, 1, 2293778, 196608, 1, 2293779, 196608, 1, 2293780, 196608, 1, 2293781, 196608, 1, 2293782, 196608, 1, 2293783, 196608, 1, 2293784, 196608, 1, 2293785, 196608, 1, 2293786, 196608, 1, 2293787, 196608, 1, 2293788, 196608, 1, 2293789, 196608, 1, 2293790, 196608, 1, 2293791, 196608, 1, 2293792, 196608, 1, 2293793, 196608, 1, 2293794, 196608, 1, 2293795, 196608, 1, 2293796, 196608, 1, 2293797, 196608, 1, 2293798, 196608, 1, 2293799, 196608, 1, 2293800, 196608, 1, 2293801, 196608, 1, 2293802, 196608, 1, 2293803, 196608, 1, 2293804, 196608, 1, 2293805, 196608, 1, 2293806, 196608, 1, 2293807, 196608, 1, 2293808, 196608, 1, 2293809, 196608, 1, 2293810, 196608, 1, 2293811, 196608, 1, 2293812, 196608, 1, 2293813, 196608, 1, 2293814, 196608, 1, 2293815, 196608, 1, 2293816, 196608, 1, 2293817, 196608, 1, 2293818, 196608, 1, 2293819, 196608, 1, 2293820, 196608, 1, 2293821, 196608, 1, 2293822, 196608, 1, 2293823, 196608, 1, 2293824, 196608, 1, 2293825, 196608, 1, 2293826, 196608, 1, 2293827, 196608, 1, 2293828, 196608, 1, 2293829, 196608, 1, 2293830, 196608, 1, 2293831, 196608, 1, 1376327, 65536, 3, 1441863, 65536, 3, 1507399, 65536, 3, 1572935, 65536, 3, 1638471, 65536, 3, 1704007, 65536, 3, 1769543, 65536, 3, 1835079, 65536, 3, 1900615, 65536, 3, 1966151, 65536, 3, 2031687, 65536, 3, 2097223, 65536, 3, 2162759, 65536, 3, 2228295, 65536, 3, 1835054, 458752, 10, 1900590, 458752, 10, 1966126, 458752, 10, 2031662, 458752, 10, 2097198, 458752, 10, 2162734, 458752, 10, 2228270, 458752, 10, 1835053, 65536, 1, 1835055, 65536, 1, 1835056, 65536, 1, 1835057, 65536, 1, 1835058, 65536, 1, 1835059, 65536, 1, 1835060, 65536, 1, 1835061, 65536, 1, 1835062, 65536, 1, 2228265, 65536, 1, 2228264, 65536, 1, 2228266, 65536, 1, 2162727, 1, 131072, 2162705, 1, 131072, 1638452, 1, 131072)
+layer_0/tile_data = PackedInt32Array(2293760, 196608, 1, 2293761, 196608, 1, 2293762, 196608, 1, 2293763, 196608, 1, 2293764, 196608, 1, 2293765, 196608, 1, 2293766, 196608, 1, 2293767, 196608, 1, 2293768, 196608, 1, 2293769, 196608, 1, 2293770, 196608, 1, 2293771, 196608, 1, 2293772, 196608, 1, 2293773, 196608, 1, 2293774, 196608, 1, 2293775, 196608, 1, 2293776, 196608, 1, 2293777, 196608, 1, 2293778, 196608, 1, 2293779, 196608, 1, 2293780, 196608, 1, 2293781, 196608, 1, 2293782, 196608, 1, 2293783, 196608, 1, 2293784, 196608, 1, 2293785, 196608, 1, 2293786, 196608, 1, 2293787, 196608, 1, 2293788, 196608, 1, 2293789, 196608, 1, 2293790, 196608, 1, 2293791, 196608, 1, 2293792, 196608, 1, 2293793, 196608, 1, 2293794, 196608, 1, 2293795, 196608, 1, 2293796, 196608, 1, 2293797, 196608, 1, 2293798, 196608, 1, 2293799, 196608, 1, 2293800, 196608, 1, 2293801, 196608, 1, 2293802, 196608, 1, 2293803, 196608, 1, 2293804, 196608, 1, 2293805, 196608, 1, 2293806, 196608, 1, 2293807, 196608, 1, 2293808, 196608, 1, 2293809, 196608, 1, 2293810, 196608, 1, 2293811, 196608, 1, 2293812, 196608, 1, 2293813, 196608, 1, 2293814, 196608, 1, 2293815, 196608, 1, 2293816, 196608, 1, 2293817, 196608, 1, 2293818, 196608, 1, 2293819, 196608, 1, 2293820, 196608, 1, 2293821, 196608, 1, 2293822, 196608, 1, 2293823, 196608, 1, 2293824, 196608, 1, 2293825, 196608, 1, 2293826, 196608, 1, 2293827, 196608, 1, 2293828, 196608, 1, 2293829, 196608, 1, 2293830, 196608, 1, 2293831, 196608, 1, 1376327, 65536, 3, 1441863, 65536, 3, 1507399, 65536, 3, 1572935, 65536, 3, 1638471, 65536, 3, 1704007, 65536, 3, 1769543, 65536, 3, 1835079, 65536, 3, 1900615, 65536, 3, 1966151, 65536, 3, 2031687, 65536, 3, 2097223, 65536, 3, 2162759, 65536, 3, 2228295, 65536, 3, 1835054, 458752, 10, 1900590, 458752, 10, 1966126, 458752, 10, 2031662, 458752, 10, 2097198, 458752, 10, 2162734, 458752, 10, 2228270, 458752, 10, 1835053, 65536, 1, 1835055, 65536, 1, 1835056, 65536, 1, 1835057, 65536, 1, 1835058, 65536, 1, 1835059, 65536, 1, 1835060, 65536, 1, 1835061, 65536, 1, 1835062, 65536, 1, 2228265, 65536, 1, 2228264, 65536, 1, 2228266, 65536, 1)
 layer_1/name = "Collectables"
 layer_1/enabled = true
 layer_1/modulate = Color(1, 1, 1, 1)
 layer_1/y_sort_enabled = false
 layer_1/y_sort_origin = 0
 layer_1/z_index = 0
-layer_1/tile_data = PackedInt32Array(2162741, 1, 65536, 2097173, 1, 65536, 1245255, 1, 65536, 1769517, 1, 65536)
-
-[node name="Player" parent="." instance=ExtResource("2_ytd6m")]
-position = Vector2(552, 196)
+layer_1/tile_data = PackedInt32Array(2097172, 2, 65536, 1703988, 2, 65536, 2162740, 2, 131072, 2097193, 2, 262144, 2162745, 2, 196608, 2162751, 2, 196608, 1245255, 2, 131072, 2162701, 2, 131072, 2097160, 2, 262144, 1966146, 2, 131072, 2162755, 2, 196608, 2162758, 2, 196608)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 process_mode = 3
@@ -437,5 +443,5 @@ script = ExtResource("3_55fm2")
 [node name="InventoryGUI" parent="CanvasLayer" instance=ExtResource("3_6rhp5")]
 visible = false
 
-[connection signal="closed" from="CanvasLayer/InventoryGUI" to="Player" method="_on_inventory_gui_closed"]
-[connection signal="opened" from="CanvasLayer/InventoryGUI" to="Player" method="_on_inventory_gui_opened"]
+[connection signal="closed" from="CanvasLayer/InventoryGUI" to="." method="_on_inventory_gui_closed"]
+[connection signal="opened" from="CanvasLayer/InventoryGUI" to="." method="_on_inventory_gui_opened"]

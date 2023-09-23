@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://756es7d2ucqg"]
+
+[ext_resource type="Resource" uid="uid://csq3v4d0iq8v8" path="res://Inventory/Items/Octopus.tres" id="1_b4fue"]
+[ext_resource type="PackedScene" uid="uid://clyfavgiaatag" path="res://Item/Collectable.tscn" id="1_wbs1o"]
+[ext_resource type="Texture2D" uid="uid://b0j4iboxtil8n" path="res://Assets/Sprites/Items/Food/Octopus.png" id="2_5r284"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q6b6a"]
+resource_local_to_scene = true
+size = Vector2(14, 14)
+
+[node name="Collectable" instance=ExtResource("1_wbs1o")]
+itemRes = ExtResource("1_b4fue")
+
+[node name="CollisionShape2D" parent="." index="0"]
+shape = SubResource("RectangleShape2D_q6b6a")
+
+[node name="Sprite2D" parent="." index="2"]
+texture = ExtResource("2_5r284")

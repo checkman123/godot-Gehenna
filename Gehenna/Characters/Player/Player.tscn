@@ -1,6 +1,7 @@
-[gd_scene load_steps=30 format=3 uid="uid://cctcfip7ngsde"]
+[gd_scene load_steps=31 format=3 uid="uid://cctcfip7ngsde"]
 
 [ext_resource type="Script" path="res://Characters/Player/Player.gd" id="1_ghlnc"]
+[ext_resource type="Resource" uid="uid://i0x18s2f6ld6" path="res://Inventory/PlayerInventory.tres" id="2_cn6xy"]
 [ext_resource type="Texture2D" uid="uid://ygietd64ey0v" path="res://Assets/Sprites/Characters/Player/Kino_Walk.png" id="2_rkbsj"]
 [ext_resource type="Texture2D" uid="uid://bey5mn2q7erks" path="res://Assets/Sprites/Characters/Player/Kino_Idle.png" id="2_yujwp"]
 [ext_resource type="Script" path="res://Characters/Player/CharacterStateMachine.gd" id="4_8hodp"]
@@ -251,6 +252,7 @@ height = 38.0
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_ghlnc")
+inventory = ExtResource("2_cn6xy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_akwdn")

@@ -1,0 +1,52 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5mwdphrw5qew"]
+
+[ext_resource type="Script" path="res://GUI/SlotGUI.gd" id="1_qrag8"]
+[ext_resource type="Texture2D" uid="uid://6hvcxmg8n1do" path="res://Assets/Sprites/GUI/Inventory/inventorySlot.png" id="2_sjm2f"]
+
+[node name="InventorySlot" type="Panel"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(51, 51)
+offset_right = 51.0
+offset_bottom = 51.0
+script = ExtResource("1_qrag8")
+
+[node name="Background" type="Sprite2D" parent="."]
+scale = Vector2(2.55, 2.55)
+texture = ExtResource("2_sjm2f")
+centered = false
+vframes = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+custom_minimum_size = Vector2(51, 51)
+layout_mode = 0
+offset_right = 51.0
+offset_bottom = 51.0
+
+[node name="Panel" type="Panel" parent="CenterContainer"]
+layout_mode = 2
+tooltip_text = "ASDASD"
+
+[node name="Item" type="Sprite2D" parent="CenterContainer/Panel"]
+visible = false
+scale = Vector2(2.55, 2.5625)
+texture = ExtResource("2_sjm2f")
+vframes = 2
+
+[node name="Label" type="Label" parent="CenterContainer/Panel"]
+layout_mode = 0
+offset_left = -22.0
+offset_right = 23.0
+offset_bottom = 31.0
+theme_override_font_sizes/font_size = 20
+text = "99"
+horizontal_alignment = 2
+
+[node name="ToolTipPanel" type="Panel" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 50.0
+offset_bottom = 50.0
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
